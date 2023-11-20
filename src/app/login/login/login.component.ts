@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login/login.service';
+import { CheckPermissionsDirective } from '../../directives/checkpermissions.directive';
 declare var window: any;
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
+  providers : [CheckPermissionsDirective]
 })
 export class LoginComponent {
   loadIngresando: boolean;
@@ -36,8 +38,8 @@ export class LoginComponent {
     }
     this.loadIngresando = true;
     this.loginService.iniciar(this.formGroup.getRawValue()).subscribe({
-      next: (value) => {
-        console.log(value);
+      next: (value : any) => {
+        this.loginService.setSession(value.datos);
         this.loadIngresando = false;
         //window.location.href = '/home';
       },

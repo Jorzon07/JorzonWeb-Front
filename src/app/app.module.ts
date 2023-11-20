@@ -21,6 +21,8 @@ import { registerLocaleData } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { JwtModule } from '@auth0/angular-jwt';
+import { CheckPermissionsDirective } from './directives/checkpermissions.directive';
+import { UsuariosComponent } from './admin/usuarios/usuarios/usuarios.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -39,6 +41,8 @@ export function tokenGetter() {
     PopularComponent,
     NoticiasComponent,
     NoticiaComponent,
+    CheckPermissionsDirective,
+    UsuariosComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +66,7 @@ export function tokenGetter() {
     }),
     
   ],
-  providers: [],
+  providers: [CheckPermissionsDirective],
   bootstrap: [AppComponent],
 })
 export class AppModule {
