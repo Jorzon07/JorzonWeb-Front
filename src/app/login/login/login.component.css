@@ -1,0 +1,83 @@
+:host {
+    color: white;
+    background: transparent;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/images/Background.png');
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+
+}
+
+input.transparent-input {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.logo {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    font-size: 3em;
+    font-weight: 700;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    margin-left: 20 px;
+    font-weight: 600;
+}
+
+.nav a:hover {
+    border-bottom: 4px solid #fff;
+    transition: .5s;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+.formulario {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    border-radius: 10px;
+    border: none;
+    backdrop-filter: blur(8px);
+}
+
+.sign-up {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    border: 1px;
+    border-radius: 10px;
+    background-image: url('/assets/images/Background2.png');
+    background-position: center;
+    background-size: cover;
+    padding: 25px;
+    width: 85%;
+    min-height: 85%;
+}
+
+.content .icon i {
+    margin-left: 20px;
+    color: #fff;
+}
+
+#modalRegistroExitoso {
+    color: black;
+}

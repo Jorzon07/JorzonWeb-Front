@@ -1,0 +1,17 @@
+<div id="noticias">
+    <h1 class="title">Noticias Recientes</h1>
+    <div class="d-flex flex-wrap justify-content-center p-5">
+        <div class="m-2" *ngFor="let noticia of noticias">
+            <a [routerLink]="['/noticia', noticia.id]">
+                <div class="news-box">
+                    <div class="news-image" style="background-image: url('{{noticia.imagenCaratula}}');"></div>
+                    <h3>{{noticia.titulo}}</h3>
+                    <span class="op5 mar2">
+                        <i class="fa-clock far op7 mar"></i>
+                        {{noticia.fecha | date:"MMMM dd', 'yyyy" :undefined : translateService.defaultLang}}
+                    </span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

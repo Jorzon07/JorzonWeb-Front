@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <app-navbar></app-navbar>
+    <!-- Navbar -->
+    <div class="background"></div>
+    <div class="container">
+        <div class="banner" id="home">
+            <div class="content">
+                <h2 class="text-center mb-3">{{noticia.titulo}}</h2>
+                <p>
+                    <i class="fa-clock far op7 mar"></i>
+                    {{noticia.fecha | date:"MMMM dd', 'yyyy" :undefined : translateService.defaultLang}}
+                </p>
+                <br>
+                <p>{{noticia.descripcion}}
+                </p>
+            </div>
+            <div class="avatar">
+                <img src="{{noticia.imagenNoticia}}" alt="Avatar">
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="ImgAnime-table">
+            <div class="ImgAnimeBlock-table">
+                <img src="../images/NHallowen1.jpg" alt="">
+            </div>
+            <div class="ImgAnimeBlock-table">
+                <img src="../images/NHallowen2.jpg" alt="">
+            </div>
+            <div class="ImgAnimeBlock-table">
+                <img src="../images/NHallowen3.jpg" alt="">
+            </div>
+            <div class="ImgAnimeBlock-table">
+                <img src="../images/NHallowen4.jpg" alt="">
+            </div>
+            <div class="ImgAnimeBlock-table">
+                <img src="../images/NHallowen5jpg.jpg" alt="">
+            </div>
+            <div class="ImgAnimeBlock-table">
+                <img src="../images/NHallowen6.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <app-popular></app-popular>
+    <app-noticias></app-noticias>
+</body>
+
+</html>

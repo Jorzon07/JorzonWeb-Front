@@ -1,0 +1,122 @@
+<div class="background"></div>
+
+<nav class="nav p-4">
+    <a href="home"> Inicio </a>
+</nav>
+<div class="main d-flex justify-content-center align-middle">
+    <div class="content">
+        <div class="d-flex flex-wrap bd-highlight justify-content-evenly">
+            <div class="p-2 flex-fill bd-highlight">
+                <div class="container d-flex justify-content-start">
+
+                    <div>
+                        <p class="logo"> <i class="fa-solid fa-spider"></i>Jorzon Web</p>
+                        <h3> Bienvenidos! </h3>
+                        <h3> Agradecemos su apoyo </h3>
+                        <pre> Visita mis redes sociales </pre>
+                        <div class="icon">
+                            <a href="https://www.instagram.com/jorgeivangarzonsanchez/" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/jorgeivan.garzonsanchez/" target="_blank">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="https://twitter.com/JorgeIvanGarzo6" target="_blank">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                            <a href="https://github.com/Jorzon07" target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-2 flex-fill bd-highlight">
+
+                <form [formGroup]="formGroup" (keydown.enter)="$event.preventDefault()" #formDirective="ngForm">
+
+                    <div class="container-fluid formulario">
+                        <div class="d-flex justify-content-center">
+                            <h2 class="">Registrate</h2>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+                            <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre"
+                                aria-label="Nombre" aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
+                            <input type="email" class="form-control" formControlName="correo" placeholder="Correo"
+                                aria-label="Correo" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock"></i></span>
+                            <input type="password" class="form-control" formControlName="password"
+                                placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock"></i></span>
+                            <input type="password" class="form-control" formControlName="confirmPassword"
+                                placeholder="Confirmar Contraseña" aria-label="Confirmar Contraseña"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="inputGroupSelect01"><i class="fa fa-id-badge"
+                                    aria-hidden="true"></i></label>
+                            <select class="form-select" id="inputGroupSelect01" formControlName="role">
+                                <option value="TIPO_USUARIO">Tipo de Usuario</option>
+                                <option value="USER">Usuario</option>
+                                <option value="ADMIN">Administrador</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3" *ngIf="formGroup.get('rol')?.value =='ADMIN'">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock"></i></span>
+                            <input type="password" class="form-control" formControlName="llaveSecreta"
+                                placeholder="Ingrese el código de seguridad" aria-label="Ingrese el código de seguridad"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <div class="d-flex justify-content-evenly mt-3">
+                            <button type="button" class="btn btn-dark" style="width: 100% !important;"
+                                (click)="guardar()">
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
+                                    *ngIf="loadingRegistro"></span>
+                                {{loadingRegistro ? 'Registrando, por favor espere' : 'Registrar'}}</button>
+                        </div>
+
+                        <div class="alert alert-danger mt-1" role="alert" *ngIf="errors.length>0">
+                            <ng-container *ngFor="let error of errors">{{error}}<br></ng-container>
+                        </div>
+
+                        <div class="sign-up gap-1 mt-2">
+                            <p> ¿Ya tienes una cuenta?</p>
+                            <br>
+                            <a href="login" class="link-light">Iniciar Sesion</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<div class="modal fade" id="modalRegistroExitoso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Registro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {{mensajeRespuesta}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" (click)="irALogin()">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>

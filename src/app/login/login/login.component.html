@@ -1,0 +1,78 @@
+<div class="background"></div>
+
+<nav class="nav p-4">
+    <a href="home"> Inicio </a>
+</nav>
+<div class="main d-flex justify-content-center align-middle">
+    <div class="content">
+        <div class="d-flex flex-wrap bd-highlight justify-content-evenly">
+            <div class="p-2 flex-fill bd-highlight">
+                <div class="container d-flex justify-content-start">
+
+                    <div>
+                        <p class="logo"> <i class="fa-solid fa-spider"></i>Jorzon Web</p>
+                        <h3> Bienvenidos! </h3>
+                        <h3> Agradecemos su apoyo </h3>
+                        <pre> Visita mis redes sociales </pre>
+                        <div class="icon">
+                            <a href="https://www.instagram.com/jorgeivangarzonsanchez/" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/jorgeivan.garzonsanchez/" target="_blank">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="https://twitter.com/JorgeIvanGarzo6" target="_blank">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                            <a href="https://github.com/Jorzon07" target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-2 flex-fill bd-highlight">
+
+                <form [formGroup]="formGroup" (keydown.enter)="$event.preventDefault()" #formDirective="ngForm">
+
+                    <div class="container-fluid formulario">
+                        <div class="d-flex justify-content-center">
+                            <h2 class="">Registrate</h2>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
+                            <input type="email" class="form-control" formControlName="correo" placeholder="Correo"
+                                aria-label="Correo" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock"></i></span>
+                            <input type="password" class="form-control" formControlName="password"
+                                placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="d-flex justify-content-evenly mt-3">
+                            <button type="button" class="btn btn-dark" style="width: 100% !important;"
+                                (click)="login()">
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
+                                    *ngIf="loadIngresando"></span>
+                                {{loadIngresando ? 'Iniciando, por favor espere' : 'Iniciar'}}</button>
+                        </div>
+
+                        <div class="alert alert-danger mt-1" role="alert" *ngIf="errors.length>0">
+                            <ng-container *ngFor="let error of errors">{{error}}<br></ng-container>
+                        </div>
+
+                        <div class="sign-up gap-1 mt-2">
+                            <p> No tienes una cuenta?</p>
+                            <br>
+                            <a href="registrar" class="link-light">Registrate</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
