@@ -29,7 +29,20 @@
     "TIPO_USUARIO": "Type of user",
     "USER": "User",
     "ADMIN": "Administrator",
+    "PLACEHOLDER_CODIGO_SEGURIDAD": "Enter the security code",
     "PAGINA_REGISTRO": {
         "AVISO_ESPERA": "Starting, please wait", "BTN_INICIO": "Start"
+    },
+    "ALERTA_MODAL": {
+        "ACCESO": "Access", "ACEPTAR": "Accept"
+    },
+    "VALIDACION_NOMBRE": "Name is required",
+    "VALIDACION_CORREO": "Email is required/Should be in email format",
+    "VALIDACION_PASSWORD": "Password is required",
+    "VALIDACION_CONFIRMAR_PASSWORD_VACIA": "Password confirmation is required",
+    "VALIDACION_CONFIRMAR_PASSWORD_NO_IGUALES": "Passwords do not match",
+    "VALIDACION_ROL": "You must select a role",
+    "PAGINA_LOGIN": {
+        "AVISO_ENVIO": "Registering, please wait" 
     }
 }
