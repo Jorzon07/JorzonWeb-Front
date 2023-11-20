@@ -16,12 +16,14 @@ export class NavbarComponent {
     private scrollService: ScrollService,
     private translateService: TranslateService
   ) {
-    this.idioma = localeService.getIdioma();
+    localeService.getIdioma().then(value =>{
+      this.idioma = value;
+    });
   }
 
-  setIdioma(locale: string) {
+  async setIdioma(locale: string) {
     this.localeService.setLocale(locale);
-    this.idioma = this.localeService.getIdioma();
+    this.idioma = await this.localeService.getIdioma();
     window.location.reload();
   }
 

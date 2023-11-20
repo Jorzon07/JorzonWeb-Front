@@ -1,7 +1,7 @@
 <div class="background"></div>
 
 <nav class="nav p-4">
-    <a href="home"> Inicio </a>
+    <a href="home">{{ 'INICIO' | translate}}</a>
 </nav>
 <div class="main d-flex justify-content-center align-middle">
     <div class="content">
@@ -10,10 +10,10 @@
                 <div class="container d-flex justify-content-start">
 
                     <div>
-                        <p class="logo"> <i class="fa-solid fa-spider"></i>Jorzon Web</p>
-                        <h3> Bienvenidos! </h3>
-                        <h3> Agradecemos su apoyo </h3>
-                        <pre> Visita mis redes sociales </pre>
+                        <p class="logo"> <i class="fa-solid fa-spider"></i>{{ 'TITULO' | translate}}</p>
+                        <h3>{{ 'SALUDO' | translate}}</h3>
+                        <h3>{{ 'AGRADECIMIENTO' | translate}}</h3>
+                        <pre>{{ 'SOLICITUD' | translate}}</pre>
                         <div class="icon">
                             <a href="https://www.instagram.com/jorgeivangarzonsanchez/" target="_blank">
                                 <i class="fa-brands fa-instagram"></i>
@@ -37,24 +37,24 @@
 
                     <div class="container-fluid formulario">
                         <div class="d-flex justify-content-center">
-                            <h2 class="">Registrate</h2>
+                            <h2 class="">{{ 'LINK_LOGUEO' | translate}}</h2>
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
-                            <input type="email" class="form-control" formControlName="correo" placeholder="Correo"
+                            <input type="email" class="form-control" formControlName="correo" placeholder="{{ 'PLACEHOLDER_CORREO' | translate}}"
                                 aria-label="Correo" aria-describedby="basic-addon1">
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock"></i></span>
                             <input type="password" class="form-control" formControlName="password"
-                                placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1">
+                                placeholder="{{ 'PLACEHOLDER_PASSWORD' | translate}}" aria-label="Contraseña" aria-describedby="basic-addon1">
                         </div>
                         <div class="d-flex justify-content-evenly mt-3">
                             <button type="button" class="btn btn-dark" style="width: 100% !important;"
                                 (click)="login()">
                                 <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
                                     *ngIf="loadIngresando"></span>
-                                {{loadIngresando ? 'Iniciando, por favor espere' : 'Iniciar'}}</button>
+                                {{loadIngresando ? 'PAGINA_REGISTRO.AVISO_ESPERA' : 'PAGINA_REGISTRO.BTN_INICIO' | translate }}</button>
                         </div>
 
                         <div class="alert alert-danger mt-1" role="alert" *ngIf="errors.length>0">
@@ -62,9 +62,9 @@
                         </div>
 
                         <div class="sign-up gap-1 mt-2">
-                            <p> No tienes una cuenta?</p>
+                            <p>{{ 'PREGUNTA_REGISTRO' | translate}}</p>
                             <br>
-                            <a href="registrar" class="link-light">Registrate</a>
+                            <a href="registrar" class="link-light">{{ 'LINK_REGISTRO' | translate}}</a>
                         </div>
                     </div>
                 </form>
