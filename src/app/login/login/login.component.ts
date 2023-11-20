@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login/login.service';
+import { TranslateService } from '@ngx-translate/core';
+import { firstValueFrom } from 'rxjs';
 declare var window: any;
 
 @Component({
@@ -17,7 +19,8 @@ export class LoginComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private translateService: TranslateService
   ) {
     this.construirFormulario();
   }
@@ -50,16 +53,20 @@ export class LoginComponent {
     });
   }
 
-  checkErrores() {
+  async checkErrores() {
     this.errors = [];
 
     if (this.formGroup.get('correo')?.invalid) {
+      let errorCorreo = await firstValueFrom(this.translateService.get('VALIDACION_CORREO'));
       this.errors.push(
-        'El correo es obligatorio/Cumplir con el formato de correo'
+        errorCorreo
       );
     }
     if (this.formGroup.get('password')?.invalid) {
-      this.errors.push('La contraseña es obligatoria');
+      let errorPassword = await firstValueFrom(this.translateService.get('VALIDACION_PASSWORD'));
+      this.errors.push(
+        errorPassword
+      );
     }
   }
 

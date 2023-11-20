@@ -29,7 +29,20 @@
     "TIPO_USUARIO": "Tipo de Usuario",
     "USER": "Usuario",
     "ADMIN": "Administrador",
-    "PAGINA_REGISTRO": {
+    "PLACEHOLDER_CODIGO_SEGURIDAD": "Ingrese el código de seguridad",
+    "PAGINA_REGISTRO": { 
         "AVISO_ESPERA": "Iniciando, por favor espere", "BTN_INICIO": "Iniciar"
+    },
+    "ALERTA_MODAL": {
+        "ACCESO": "Acceso", "ACEPTAR": "Aceptar" 
+    },
+    "VALIDACION_NOMBRE": "El nombre es obligatorio",
+    "VALIDACION_CORREO": "El correo es obligatorio/Cumplir con el formato de correo",
+    "VALIDACION_PASSWORD": "La contraseña es obligatoria",
+    "VALIDACION_CONFIRMAR_PASSWORD_VACIA": "Debe confirmar la contraseña",
+    "VALIDACION_CONFIRMAR_PASSWORD_NO_IGUALES": "Las contraseñas no coinciden",
+    "VALIDACION_ROL": "Debe seleccionar un Rol",
+    "PAGINA_LOGIN": {
+        "AVISO_ENVIO": "Registrando, por favor espere" 
     }
 }

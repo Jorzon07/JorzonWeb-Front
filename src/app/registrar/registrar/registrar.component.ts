@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsuarioService } from '../../services/usuario/usuario.service';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { firstValueFrom } from 'rxjs';
 declare var window: any;
 
 @Component({
@@ -19,7 +21,8 @@ export class RegistrarComponent {
   constructor(
     private formBuilder: FormBuilder,
     private usuarioService: UsuarioService,
-    private router: Router
+    private router: Router,
+    private translateService: TranslateService
   ) {
     this.construirFormulario();
   }
@@ -57,21 +60,32 @@ export class RegistrarComponent {
     });
   }
 
-  checkErrores() {
+  async checkErrores() {
     this.errors = [];
+
     if (this.formGroup.get('nombre')?.invalid) {
-      this.errors.push('El nombre es obligatorio');
+      let errorNombre = await firstValueFrom(this.translateService.get('VALIDACION_NOMBRE'));
+      this.errors.push(
+        errorNombre
+      );
     }
     if (this.formGroup.get('correo')?.invalid) {
+      let errorCorreo = await firstValueFrom(this.translateService.get('VALIDACION_CORREO'));
       this.errors.push(
-        'El correo es obligatorio/Cumplir con el formato de correo'
+        errorCorreo
       );
     }
     if (this.formGroup.get('password')?.invalid) {
-      this.errors.push('La contraseña es obligatoria');
+      let errorContrasena = await firstValueFrom(this.translateService.get('VALIDACION_PASSWORD'));
+      this.errors.push(
+        errorContrasena
+      );
     }
     if (this.formGroup.get('confirmPassword')?.invalid) {
-      this.errors.push('Debe confirmar la contraseña');
+      let errorConfirmarContraseña = await firstValueFrom(this.translateService.get('VALIDACION_CONFIRMAR_PASSWORD_VACIA'));
+      this.errors.push(
+        errorConfirmarContraseña
+      );
     }
     if (
       this.formGroup.get('password')?.valid &&
@@ -81,14 +95,20 @@ export class RegistrarComponent {
         this.formGroup.get('password')?.value !=
         this.formGroup.get('confirmPassword')?.value
       ) {
-        this.errors.push('Las contraseñas no coinciden');
+        let errorConfirmarContraseña = await firstValueFrom(this.translateService.get('VALIDACION_CONFIRMAR_PASSWORD_NO_IGUALES'));
+        this.errors.push(
+          errorConfirmarContraseña
+        );
       }
     }
     if (
       this.formGroup.get('role')?.valid &&
       this.formGroup.get('role')?.value == 'TIPO_USUARIO'
     ) {
-      this.errors.push('Debe seleccionar un Rol');
+      let errorRol = await firstValueFrom(this.translateService.get('VALIDACION_ROL'));
+      this.errors.push(
+        errorRol
+      );
     }
   }
 

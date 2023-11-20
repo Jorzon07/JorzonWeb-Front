@@ -29,7 +29,20 @@
     "TIPO_USUARIO": "Type d'utilisateur",
     "USER": "Utilisateur",
     "ADMIN": "Administrateur",
+    "PLACEHOLDER_CODIGO_SEGURIDAD": "Entrez le code de sécurité",
     "PAGINA_REGISTRO": {
         "AVISO_ESPERA": "Je commence, veuillez patienter", "BTN_INICIO": "Commencer"
+    },
+    "ALERTA_MODAL": {
+        "ACCESO": "Accéder", "ACEPTAR": "Accepter"
+    },
+    "VALIDACION_NOMBRE": "Le nom est obligatoire",
+    "VALIDACION_CORREO": "L'e-mail est obligatoire / Respecter le format de l'e-mail",
+    "VALIDACION_PASSWORD": "Le mot de passe est obligatoire",
+    "VALIDACION_CONFIRMAR_PASSWORD_VACIA": "Vous devez confirmer le mot de passe",
+    "VALIDACION_CONFIRMAR_PASSWORD_NO_IGUALES": "Les mots de passe ne correspondent pas",
+    "VALIDACION_ROL": "Vous devez sélectionner un rôle",
+    "PAGINA_LOGIN": {
+        "AVISO_ENVIO": "Inscription, veuillez patienter" 
     }
 }
