@@ -60,7 +60,6 @@
                         <div class="alert alert-danger mt-1" role="alert" *ngIf="errors.length>0">
                             <ng-container *ngFor="let error of errors">{{error}}<br></ng-container>
                         </div>
-
                         <div class="sign-up gap-1 mt-2">
                             <p> No tienes una cuenta?</p>
                             <br>
@@ -69,10 +68,23 @@
                     </div>
                 </form>
             </div>
-
         </div>
-
-
     </div>
+</div>
 
+<div class="modal fade" id="modalError" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {{mensajeRespuesta}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Aceptar</button>
+            </div>
+        </div>
+    </div>
 </div>

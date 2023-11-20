@@ -49,9 +49,10 @@ export class RegistrarComponent {
         this.mensajeRespuesta = response.mensaje
         this.registroExitoso();
       },
-      error: ({error}) => {
+      error: (error : any) => {
+        console.log(error)
         this.loadingRegistro = false;
-        this.errors.push(error?.errores == null ? error.mensaje : error?.errores);
+        this.errors.push(error?.error?.mensaje || error?.message);
       },
     });
   }

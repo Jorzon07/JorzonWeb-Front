@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LoginService } from '../../services/login/login.service';
+declare var window: any;
 
 @Component({
   selector: 'app-login',
@@ -9,10 +11,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent {
   loadIngresando: boolean;
   errors: string[] = [];
+  mensajeRespuesta: string;
 
   formGroup: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private loginService: LoginService
+  ) {
     this.construirFormulario();
   }
 
@@ -25,6 +31,23 @@ export class LoginComponent {
 
   login() {
     this.checkErrores();
+    if (this.errors.length > 0) {
+      return;
+    }
+    this.loadIngresando = true;
+    this.loginService.iniciar(this.formGroup.getRawValue()).subscribe({
+      next: (value) => {
+        console.log(value);
+        this.loadIngresando = false;
+        //window.location.href = '/home';
+      },
+      error: (error: any) => {
+        console.log(error);
+        this.loadIngresando = false;
+        this.mensajeRespuesta = error?.error?.mensaje || error.message;
+        this.errorLogin();
+      },
+    });
   }
 
   checkErrores() {
@@ -38,5 +61,12 @@ export class LoginComponent {
     if (this.formGroup.get('password')?.invalid) {
       this.errors.push('La contraseña es obligatoria');
     }
+  }
+
+  errorLogin() {
+    let modal = new window.bootstrap.Modal(
+      document.getElementById('modalError')
+    );
+    modal.show();
   }
 }

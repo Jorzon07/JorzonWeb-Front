@@ -20,9 +20,13 @@ import localeEn from '@angular/common/locales/en';
 import { registerLocaleData } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { JwtModule } from '@auth0/angular-jwt';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+export function tokenGetter() {
+  return localStorage.getItem("token");
 }
 
 @NgModule({
@@ -43,6 +47,12 @@ export function createTranslateLoader(http: HttpClient) {
     HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["*"]
+      },
+    }),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -50,6 +60,7 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
+    
   ],
   providers: [],
   bootstrap: [AppComponent],

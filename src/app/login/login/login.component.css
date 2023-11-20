@@ -81,3 +81,7 @@ input.transparent-input {
 #modalRegistroExitoso {
     color: black;
 }
+
+#modalError {
+    color: black;
+}
