@@ -5,11 +5,11 @@ import { LoginService } from '../login/login.service';
 @Injectable({
     providedIn: 'root',
   })
-export class AuthGuardService {
+export class NoLoginGuardService {
   constructor(public loginService: LoginService, public router: Router) {}
   canActivate(): boolean {
-    if (!this.loginService.estaAutenticado()) {
-      this.router.navigate(['login']);
+    if (this.loginService.estaAutenticado()) {
+      this.router.navigate(['home']);
       return false;
     }
     return true;

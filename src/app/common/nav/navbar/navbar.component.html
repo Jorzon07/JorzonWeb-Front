@@ -1,28 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <!-- Container wrapper -->
     <div class="container-fluid">
         <!-- Navbar brand -->
         <a class="navbar-brand" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="/assets/images/user.svg" alt="" width="30" height="30">
+            <img src="/assets/images/user.svg" alt="" width="30" height="30"><ng-container
+                *ngIf="autenticado">{{'Bienvenido'}}{{', ' + usuario}}</ng-container>
         </a>
-        <ul class="dropdown-menu ml-4" aria-labelledby="navbarDropdown">
+        <ul class="dropdown-menu ml-4" aria-labelledby="navbarDropdown" *ngIf="!autenticado">
             <li><a class="dropdown-item" href="registrar">{{ 'BTN_REGISTRAR' | translate}}</a></li>
-            <li><a class="dropdown-item" href="login">{{ 'BTN_INGRESAR' | translate}}</a></li>           
+            <li><a class="dropdown-item" href="login">{{ 'BTN_INGRESAR' | translate}}</a></li>
         </ul>
-        
+        <ul class="dropdown-menu ml-4" aria-labelledby="navbarDropdown" *ngIf="autenticado">
+            <li><a class="dropdown-item" type="button" (click)="salir()">Salir</a></li>
+        </ul>
+
         <!-- Icons -->
         <div class="d-flex" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      {{idioma}}
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        {{idioma}}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" (click)="setIdioma('es-CO')">{{ 'IDIOMA_ES' | translate}}</a></li>
-                      <li><a class="dropdown-item" (click)="setIdioma('en-US')">{{ 'IDIOMA_EN' | translate}}</a></li>
-                      <li><a class="dropdown-item" (click)="setIdioma('fr-FR')">{{ 'IDIOMA_FR' | translate}}</a></li>               
+                        <li><a class="dropdown-item" (click)="setIdioma('es-CO')">{{ 'IDIOMA_ES' | translate}}</a></li>
+                        <li><a class="dropdown-item" (click)="setIdioma('en-US')">{{ 'IDIOMA_EN' | translate}}</a></li>
+                        <li><a class="dropdown-item" (click)="setIdioma('fr-FR')">{{ 'IDIOMA_FR' | translate}}</a></li>
                     </ul>
-                  </li>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">{{ 'INICIO' | translate}}</a>
                 </li>
@@ -30,11 +35,12 @@
                     <a class="nav-link active" aria-current="page" href="#">Usuarios Registrados</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" type="button" (click)="scrollToId('populares')">{{ 'BTN_POPULARES' | translate}}</a>
-                </li>                
+                    <a class="nav-link" type="button" (click)="scrollToId('populares')">{{ 'BTN_POPULARES' |
+                        translate}}</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" type="button" (click)="scrollToId('noticias')">{{ 'RECIENTES' | translate}}</a>
-                </li>              
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">{{ 'CONTACTO' | translate}}</a>
                 </li>

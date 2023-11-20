@@ -44,7 +44,7 @@ export class LoginComponent {
       next: (value : any) => {
         this.loginService.setSession(value.datos);
         this.loadIngresando = false;
-        //window.location.href = '/home';
+        window.location.href = '/home';
       },
       error: (error: any) => {
         console.log(error);

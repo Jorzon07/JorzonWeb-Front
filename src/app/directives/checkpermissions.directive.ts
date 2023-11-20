@@ -16,7 +16,7 @@ export class CheckPermissionsDirective implements OnInit {
       (a: any) => a?.authority == this.role
     );
 
-    if (hasRole.length == 0) {
+    if (hasRole?.length == 0) {
       this.elRef.nativeElement.style.display = 'none';
     }
   }
