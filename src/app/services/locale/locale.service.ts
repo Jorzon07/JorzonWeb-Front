@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -6,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class LocaleService {
   private locale: any = null;
 
-  constructor() {}
+  constructor(private translateService:TranslateService) {}
 
   setLocale(locale: string) {
     localStorage.setItem('locale', locale);
@@ -17,19 +19,29 @@ export class LocaleService {
     return localStorage.getItem('locale');
   }
 
-  getIdioma() {
+  async getIdioma() {
     let locale = this.getLocale();
     let idioma = '';
     switch (locale) {
       case 'es-CO':
-        idioma = 'Español';
+        
+      idioma = await firstValueFrom(this.translateService.get('IDIOMA_ES'));
+
         break;
+
       case 'en-US':
-        idioma = 'Inglés';
-        break;
+
+      idioma = await firstValueFrom(this.translateService.get('IDIOMA_EN'));
+
+      break;
+
+        
       case 'fr-FR':
-        idioma = 'Francés';
-        break;
+
+      idioma = await firstValueFrom(this.translateService.get('IDIOMA_FR'));
+
+      break;
+
     }
 
     return idioma;

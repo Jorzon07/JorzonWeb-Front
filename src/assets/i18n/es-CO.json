@@ -4,6 +4,9 @@
     "BTN_INGRESAR":"Ingresar",
     "INICIO": "Inicio",
     "BTN_POPULARES": "Populares",
+    "IDIOMA_ES": "Español",
+    "IDIOMA_EN": "Ingles",
+    "IDIOMA_FR": "Frances",
     "BIENVENIDO": "Bienvenidos a JorzonWeb",
     "TU_FUENTE_DEFINITIVA": "Tu fuente definitiva de Noticias de Anime",
     "DESCRIPCION": "En JorzonWeb, nos apasiona el mundo del anime y estamos emocionados de compartir esa pasión contigo. Somos tu destino número uno para mantenerte al tanto de las últimas novedades, emocionantes anuncios y análisis profundos del emocionante universo del anime. Nuestra misión es ofrecerte una experiencia única en la que puedas explorar el vasto y diverso mundo del anime. Ya seas un veterano amante del anime o estés recién comenzando a descubrir este emocionante género, nuestra página está diseñada para satisfacer todas tus necesidades.",
@@ -16,12 +19,17 @@
     "SOLICITUD": "Visita mis redes sociales",
     "PLACEHOLDER_NOMBRE": "Nombre",
     "PLACEHOLDER_CORREO": "Correo",
-    "PLACEHOLDER_CONTRASEÑA": "Contraseña",
-    "PLACEHOLDER_CONFIRMAR_CONTRASEÑA": "Confirmar Contraseña",
-    "BTN_INICIO": "Iniciar",
+    "PLACEHOLDER_PASSWORD": "Contraseña",
+    "PLACEHOLDER_CONFIRMAR_PASSWORD": "Confirmar Contraseña",
     "PREGUNTA_REGISTRO": "¿No tienes una cuenta?",
     "LINK_REGISTRO": "Registrate",
     "BTN_REGISTRO": "Registrarse",
     "PREGUNTA_LOGUEO": "¿Ya tienes una cuenta?",
-    "LINK_LOGUEO": "Iniciar Sesion"
+    "LINK_LOGUEO": "Iniciar Sesion",
+    "TIPO_USUARIO": "Tipo de Usuario",
+    "USER": "Usuario",
+    "ADMIN": "Administrador",
+    "PAGINA_REGISTRO": {
+        "AVISO_ESPERA": "Iniciando, por favor espere", "BTN_INICIO": "Iniciar"
+    }
 }
