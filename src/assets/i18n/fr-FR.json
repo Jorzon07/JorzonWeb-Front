@@ -45,5 +45,7 @@
     "PAGINA_LOGIN": {
         "AVISO_ENVIO": "Inscription, veuillez patienter" 
     },
-    "REGISTRO": "Utilisateurs enregistrés"
+    "REGISTRO": "Utilisateurs enregistrés",
+    "SALIR": "Sortir",
+    "SALUDO_USUARIO": "Accueillir"
 }

@@ -4,14 +4,14 @@
         <!-- Navbar brand -->
         <a class="navbar-brand" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="/assets/images/user.svg" alt="" width="30" height="30"><ng-container
-                *ngIf="autenticado">{{'Bienvenido'}}{{', ' + usuario}}</ng-container>
+                *ngIf="autenticado">{{ 'SALUDO_USUARIO' | translate}}{{', ' + usuario}}</ng-container>
         </a>
         <ul class="dropdown-menu ml-4" aria-labelledby="navbarDropdown" *ngIf="!autenticado">
             <li><a class="dropdown-item" href="registrar">{{ 'BTN_REGISTRAR' | translate}}</a></li>
             <li><a class="dropdown-item" href="login">{{ 'BTN_INGRESAR' | translate}}</a></li>
         </ul>
         <ul class="dropdown-menu ml-4" aria-labelledby="navbarDropdown" *ngIf="autenticado">
-            <li><a class="dropdown-item" type="button" (click)="salir()">Salir</a></li>
+            <li><a class="dropdown-item" type="button" (click)="salir()">{{ 'SALIR' | translate}}</a></li>
         </ul>
 
         <!-- Icons -->
