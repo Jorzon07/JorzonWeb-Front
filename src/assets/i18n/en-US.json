@@ -44,5 +44,6 @@
     "VALIDACION_ROL": "You must select a role",
     "PAGINA_LOGIN": {
         "AVISO_ENVIO": "Registering, please wait" 
-    }
+    },
+    "REGISTRO": "Registered users"
 }

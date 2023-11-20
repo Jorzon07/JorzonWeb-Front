@@ -44,5 +44,7 @@
     "VALIDACION_ROL": "Debe seleccionar un Rol",
     "PAGINA_LOGIN": {
         "AVISO_ENVIO": "Registrando, por favor espere" 
-    }
+    },
+    "REGISTRO": "Usuarios Registrados"
+
 }
