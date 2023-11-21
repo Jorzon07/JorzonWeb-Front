@@ -18,7 +18,7 @@ export class CheckPermissionsDirective implements OnInit {
 
     let validToken = this.loginService.estaAutenticado();
 
-    if (hasRole?.length == 0 || validToken) {
+    if (hasRole?.length == 0 || !validToken) {
       this.elRef.nativeElement.style.display = 'none';
     }
   }
