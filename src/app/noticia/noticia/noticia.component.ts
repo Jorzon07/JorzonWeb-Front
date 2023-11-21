@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NoticiaService } from '../../services/noticia/noticia.service';
 import { TranslateService } from '@ngx-translate/core';
+import { DomSanitizer } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-noticia',
@@ -16,7 +18,8 @@ export class NoticiaComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private noticiaService: NoticiaService,
-    public translateService : TranslateService
+    public translateService : TranslateService,
+    private domSanitizer: DomSanitizer
   ) {
     this.noticia = {};
   }
@@ -36,5 +39,9 @@ export class NoticiaComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.sub.unsubscribe();
+  }
+
+  cargarImagen(imagen : string) {
+    return this.domSanitizer.bypassSecurityTrustUrl(imagen);
   }
 }

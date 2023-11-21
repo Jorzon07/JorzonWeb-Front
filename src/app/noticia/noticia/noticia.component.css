@@ -453,3 +453,18 @@ h3 {
         color: #fff;
     }
 }
+
+
+.news-box2 {
+    max-width: 271.7px;
+    max-height: 415.8px;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: left;
+    text-decoration-color: #fff;
+    margin-bottom: 10px;
+    box-shadow: var(--box-shadow);
+    color: #fff;
+}

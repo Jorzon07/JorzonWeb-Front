@@ -23,4 +23,13 @@ export class UsuarioService {
       },
     });
   }
+
+  listado() {
+    let currentLocale = this.localeService.getLocale();
+    return this.httpClient.get(this.API, {
+      headers: {
+        'Accept-language': currentLocale == null ? this.locale : currentLocale,
+      },
+    });
+  }
 }

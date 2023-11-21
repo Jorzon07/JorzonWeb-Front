@@ -34,6 +34,15 @@
             </div>
         </div>
     </div>
+    <div class="d-flex flex-wrap justify-content-center p-5">
+        <div class="m-2" *ngFor="let imagen of noticia.imagenes">
+            <a>
+                <div class="news-box2">
+                    <img [src]="cargarImagen(imagen)" class="img-fluid">
+                </div>
+            </a>
+        </div>
+    </div>
     <div>
         <div class="ImgAnime-table">
             <div class="ImgAnimeBlock-table">
