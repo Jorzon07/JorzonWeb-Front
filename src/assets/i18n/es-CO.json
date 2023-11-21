@@ -47,5 +47,7 @@
     },
     "REGISTRO": "Usuarios Registrados",
     "SALIR": "Salir",
-    "SALUDO_USUARIO": "Bienvenido"
+    "SALUDO_USUARIO": "Bienvenido",
+    "USUARIOS_REGISTRADOS": "Usuarios Registrados",
+    "ROL": "Rol"
 }
