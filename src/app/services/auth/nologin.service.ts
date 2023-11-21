@@ -12,6 +12,7 @@ export class NoLoginGuardService {
       this.router.navigate(['home']);
       return false;
     }
+    this.loginService.cerrarSession();
     return true;
   }
 }
