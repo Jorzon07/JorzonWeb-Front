@@ -23,6 +23,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { JwtModule } from '@auth0/angular-jwt';
 import { CheckPermissionsDirective } from './directives/checkpermissions.directive';
 import { UsuariosComponent } from './admin/usuarios/usuarios/usuarios.component';
+import { ContactoComponent } from './common/contacto/contacto/contacto.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -43,6 +44,7 @@ export function tokenGetter() {
     NoticiaComponent,
     CheckPermissionsDirective,
     UsuariosComponent,
+    ContactoComponent,
   ],
   imports: [
     BrowserModule,
